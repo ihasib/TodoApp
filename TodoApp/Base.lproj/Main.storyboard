@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Todo App-->
         <scene sceneID="FsK-uE-Yi8">
             <objects>
                 <tableViewController id="L3e-oG-ojJ" sceneMemberID="viewController">
@@ -32,7 +32,11 @@
                             <outlet property="delegate" destination="L3e-oG-ojJ" id="Hds-8C-QFY"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="r08-tx-9vT"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Todo App" id="avf-V8-vkx">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="jvI-PS-dDq"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j7y-PD-c4M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
