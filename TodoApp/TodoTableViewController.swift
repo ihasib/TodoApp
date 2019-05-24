@@ -9,38 +9,47 @@
 import UIKit
 
 class TodoTableViewController: UITableViewController {
-
+    
+    var todoTaskList: [TodoTask] = []
+    let cellId = "reuseIdentifier"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        todoTaskList = createTodos()
     }
 
+    func createTodos() -> [TodoTask]{
+        
+        let buyEgg = TodoTask()
+        buyEgg.name = "Buy egg from rokomari store"
+        
+        let playTennis = TodoTask()
+        playTennis.name = "play tennis at 4pm"
+        
+        return [buyEgg, playTennis]
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return todoTaskList.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
 
         // Configure the cell...
-
+        cell.textLabel?.text = todoTaskList[indexPath.row].name
+        
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
