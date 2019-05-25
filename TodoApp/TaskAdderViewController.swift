@@ -36,6 +36,7 @@ class TaskAdderViewController: UIViewController {
         }
         previousVC.todoTaskList.append(task)
         previousVC.tableView.reloadData()
+        navigationController?.popViewController(animated: false)
     }
     
     
