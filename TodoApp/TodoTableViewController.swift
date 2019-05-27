@@ -87,14 +87,21 @@ class TodoTableViewController: UITableViewController {
     */
 
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedTask = todoTaskList[indexPath.row]
+        performSegue(withIdentifier: "moveToCompletionVC", sender: selectedTask)
+    }
+    
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        let adderVC = segue.destination as! TaskAdderViewController
-        adderVC.previousVC = self
+        let adderVC = segue.destination as? TaskAdderViewController
+        adderVC?.previousVC = self
     }
     
 
