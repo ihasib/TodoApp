@@ -24,6 +24,7 @@ class TaskAdderViewController: UIViewController {
     
     @IBAction func addTaskTapped(_ sender: Any) {
         //task creation
+        /*
         let task = TodoTask()
         
         task.isImportant = isImportant.isOn
@@ -35,6 +36,18 @@ class TaskAdderViewController: UIViewController {
             task.name += taskName
         }
         previousVC.todoTaskList.append(task)
+        */
+        
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext{
+            let task = TodoTaskCoreData(entity: TodoTaskCoreData.entity(), insertInto: context)
+            
+            if let taskName = taskTitleTextField.text {
+                task.name = taskName
+                task.isImportant = isImportant.isOn
+            }
+            try? context.save()
+        }        
+        
         previousVC.tableView.reloadData()
         navigationController?.popViewController(animated: false)
     }
