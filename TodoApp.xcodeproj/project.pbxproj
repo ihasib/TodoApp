@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5B48D3162298DD2200E5C00F /* TaskAdderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48D3152298DD2200E5C00F /* TaskAdderViewController.swift */; };
+		5B4B1283229B83B100B5C2AC /* TaskCompletionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4B1282229B83B100B5C2AC /* TaskCompletionViewController.swift */; };
 		5BF450792297DDD600CC0488 /* TodoTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF450782297DDD600CC0488 /* TodoTask.swift */; };
 		A2063CC722973CDF00EF13E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2063CC622973CDF00EF13E9 /* AppDelegate.swift */; };
 		A2063CCC22973CDF00EF13E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2063CCA22973CDF00EF13E9 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		5B48D3152298DD2200E5C00F /* TaskAdderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAdderViewController.swift; sourceTree = "<group>"; };
+		5B4B1282229B83B100B5C2AC /* TaskCompletionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCompletionViewController.swift; sourceTree = "<group>"; };
 		5BF450782297DDD600CC0488 /* TodoTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTask.swift; sourceTree = "<group>"; };
 		A2063CC322973CDF00EF13E9 /* TodoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2063CC622973CDF00EF13E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				A2063CC622973CDF00EF13E9 /* AppDelegate.swift */,
 				A2063CDD229752C900EF13E9 /* TodoTableViewController.swift */,
 				5B48D3152298DD2200E5C00F /* TaskAdderViewController.swift */,
+				5B4B1282229B83B100B5C2AC /* TaskCompletionViewController.swift */,
 				5BF450782297DDD600CC0488 /* TodoTask.swift */,
 				A2063CCA22973CDF00EF13E9 /* Main.storyboard */,
 				A2063CD022973CE000EF13E9 /* Assets.xcassets */,
@@ -147,6 +150,7 @@
 				A2063CCF22973CDF00EF13E9 /* TodoApp.xcdatamodeld in Sources */,
 				A2063CDE229752C900EF13E9 /* TodoTableViewController.swift in Sources */,
 				5B48D3162298DD2200E5C00F /* TaskAdderViewController.swift in Sources */,
+				5B4B1283229B83B100B5C2AC /* TaskCompletionViewController.swift in Sources */,
 				5BF450792297DDD600CC0488 /* TodoTask.swift in Sources */,
 				A2063CC722973CDF00EF13E9 /* AppDelegate.swift in Sources */,
 			);

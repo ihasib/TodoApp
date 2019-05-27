@@ -100,8 +100,18 @@ class TodoTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        let adderVC = segue.destination as? TaskAdderViewController
-        adderVC?.previousVC = self
+        if let adderVC = segue.destination as? TaskAdderViewController{
+            adderVC.previousVC = self
+        }
+        
+        
+        if let completionVC = segue.destination as? TaskCompletionViewController{
+            if let selectedTask = sender as? TodoTask{
+                completionVC.selectedAsCompleted = selectedTask//propagate data to the destination
+                completionVC.previousVC = self //storing data back to this sender object
+            }
+        }
+        
     }
     
 
