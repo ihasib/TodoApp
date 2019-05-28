@@ -10,28 +10,31 @@ import UIKit
 
 class TodoTableViewController: UITableViewController {
     
-    var todoTaskList: [TodoTask] = []
+    var todoTaskList: [TodoTaskCoreData] = []
     let cellId = "reuseIdentifier"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        todoTaskList = createTodos()
+        //todoTaskList = createTodos()
         
         //retieve coredata objects
         getTodoTask()
     }
+    
 
     override func viewWillAppear(_ animated: Bool) {
         getTodoTask()
     }
+    
+    
     func getTodoTask(){
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
             
             //TodoTaskCoreData.fetchRequest()
             if let fetchedTodoTaskList = try? context.fetch(TodoTaskCoreData.fetchRequest()) as? [TodoTaskCoreData] {
-                print(fetchedTodoTaskList.first?.name!)
-                print(fetchedTodoTaskList.count)
+                //if let todoTakLis = fetchedTodoTaskList {
+                    todoTaskList = fetchedTodoTaskList                
             }
         }
             
