@@ -36,6 +36,7 @@ class TaskAdderViewController: UIViewController {
             task.name += taskName
         }
         previousVC.todoTaskList.append(task)
+        previousVC.tableView.reloadData()
         */
         
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext{
@@ -48,7 +49,7 @@ class TaskAdderViewController: UIViewController {
             try? context.save()
         }        
         
-        previousVC.tableView.reloadData()
+        
         navigationController?.popViewController(animated: false)
     }
     

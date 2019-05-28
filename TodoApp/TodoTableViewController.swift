@@ -17,8 +17,26 @@ class TodoTableViewController: UITableViewController {
         super.viewDidLoad()
         
         todoTaskList = createTodos()
+        
+        //retieve coredata objects
+        getTodoTask()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        getTodoTask()
+    }
+    func getTodoTask(){
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            
+            //TodoTaskCoreData.fetchRequest()
+            if let fetchedTodoTaskList = try? context.fetch(TodoTaskCoreData.fetchRequest()) as? [TodoTaskCoreData] {
+                print(fetchedTodoTaskList.first?.name!)
+                print(fetchedTodoTaskList.count)
+            }
+        }
+            
+    }
+    
     func createTodos() -> [TodoTask]{
         
         let buyEgg = TodoTask()
