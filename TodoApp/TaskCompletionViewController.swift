@@ -10,8 +10,9 @@ import UIKit
 
 class TaskCompletionViewController: UIViewController {
 
-    var previousVC = TodoTableViewController()
-    var selectedAsCompleted = TodoTask()
+    var previousVC = TodoTableViewController()//must create instance otherwise TaskCompletionViewController class can't be initialized or previousVC have to be optional
+    //var selectedAsCompleted = TodoTask()
+    var selectedAsCompleted = TodoTaskCoreData()
     
     @IBOutlet weak var taskTitle: UILabel!
     
@@ -20,7 +21,7 @@ class TaskCompletionViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         //taskTitle.font.withSize(50.0)
-        taskTitle.numberOfLines = 0
+        taskTitle.numberOfLines = 0//allow taskname to take as many lines as it requires
         taskTitle.text = selectedAsCompleted.name
     }  
     
@@ -31,22 +32,13 @@ class TaskCompletionViewController: UIViewController {
             if toDoTask.name == selectedAsCompleted.name{
                  index = index1
             }
-            
         }
         
         previousVC.todoTaskList.remove(at: index)
-        previousVC.tableView.reloadData()
+        //previousVC.tableView.reloadData()
+//        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+//            
+//        }
         navigationController?.popViewController(animated: true)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
