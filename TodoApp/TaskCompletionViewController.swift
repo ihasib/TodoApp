@@ -27,7 +27,7 @@ class TaskCompletionViewController: UIViewController {
     
     @IBAction func taskCompletion(_ sender: Any) {
         //let index = find(previousVC.map({ }) ,selectedAsCompleted)
-        var index: Int = 0
+        /*var index: Int = 0
         for (index1,toDoTask) in previousVC.todoTaskList.enumerated(){
             if toDoTask.name == selectedAsCompleted.name{
                  index = index1
@@ -35,10 +35,14 @@ class TaskCompletionViewController: UIViewController {
         }
         
         previousVC.todoTaskList.remove(at: index)
-        //previousVC.tableView.reloadData()
-//        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
-//            
-//        }
+        previousVC.tableView.reloadData()
+ */
+        
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            
+            
+            context.delete(selectedAsCompleted)
+        }
         navigationController?.popViewController(animated: true)
     }
 }
