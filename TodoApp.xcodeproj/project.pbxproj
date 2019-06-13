@@ -43,9 +43,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B992C5A22B2627D00570373 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A2063CDD229752C900EF13E9 /* TodoTableViewController.swift */,
+				5B48D3152298DD2200E5C00F /* TaskAdderViewController.swift */,
+				5B4B1282229B83B100B5C2AC /* TaskCompletionViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A2063CBA22973CDF00EF13E9 = {
 			isa = PBXGroup;
 			children = (
+				5B992C5A22B2627D00570373 /* Views */,
 				A2063CC522973CDF00EF13E9 /* TodoApp */,
 				A2063CC422973CDF00EF13E9 /* Products */,
 			);
@@ -63,9 +74,6 @@
 			isa = PBXGroup;
 			children = (
 				A2063CC622973CDF00EF13E9 /* AppDelegate.swift */,
-				A2063CDD229752C900EF13E9 /* TodoTableViewController.swift */,
-				5B48D3152298DD2200E5C00F /* TaskAdderViewController.swift */,
-				5B4B1282229B83B100B5C2AC /* TaskCompletionViewController.swift */,
 				5BF450782297DDD600CC0488 /* TodoTask.swift */,
 				A2063CCA22973CDF00EF13E9 /* Main.storyboard */,
 				A2063CD022973CE000EF13E9 /* Assets.xcassets */,

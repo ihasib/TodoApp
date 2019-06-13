@@ -77,7 +77,17 @@ class TodoTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedTask = todoTaskList[indexPath.row]
-        performSegue(withIdentifier: "moveToCompletionVC", sender: selectedTask)
+        
+        //-----------way 1------------
+//        performSegue(withIdentifier: "moveToCompletionVC", sender: selectedTask)
+        
+        //-----------way 2------------
+        if let completionVC = storyboard?.instantiateViewController(withIdentifier: "completionScene") as? TaskCompletionViewController {
+            navigationController?.pushViewController(completionVC, animated: false)
+            completionVC.selectedAsCompleted = selectedTask
+            completionVC.previousVC = self
+        }
+        //-----------way 3------------
     }
     
     
