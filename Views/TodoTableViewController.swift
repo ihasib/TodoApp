@@ -82,12 +82,18 @@ class TodoTableViewController: UITableViewController {
 //        performSegue(withIdentifier: "moveToCompletionVC", sender: selectedTask)
         
         //-----------way 2------------
-        if let completionVC = storyboard?.instantiateViewController(withIdentifier: "completionScene") as? TaskCompletionViewController {
-            navigationController?.pushViewController(completionVC, animated: false)
-            completionVC.selectedAsCompleted = selectedTask
-            completionVC.previousVC = self
-        }
+//        if let completionVC = storyboard?.instantiateViewController(withIdentifier: "completionScene") as? TaskCompletionViewController {
+//            navigationController?.pushViewController(completionVC, animated: false)
+//            completionVC.selectedAsCompleted = selectedTask
+//            completionVC.previousVC = self
+//        }
         //-----------way 3------------
+        let completeVC = TaskCompletionViewController()
+        //present(completeVC, animated: false, completion: nil)
+        navigationController?.pushViewController(completeVC, animated: false)
+        completeVC.selectedAsCompleted = selectedTask        
+        completeVC.previousVC = self
+        
     }
     
     
