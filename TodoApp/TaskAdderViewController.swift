@@ -14,6 +14,9 @@ class TaskAdderViewController: UIViewController {
     
     @IBOutlet weak var taskTitleTextField: UITextField!
     @IBOutlet weak var isImportant: UISwitch!
+    @IBAction func dismissKeyboard(_ sender: Any) {
+        view.endEditing(true)
+    }
     
     
     override func viewDidLoad() {
@@ -43,6 +46,9 @@ class TaskAdderViewController: UIViewController {
             if let taskName = taskTitleTextField.text {
                 task.name = taskName
                 task.isImportant = isImportant.isOn
+                if isImportant.isOn {
+                    task.name = task.name! + "❗️"
+                }
             }
             try? context.save()
         }        
